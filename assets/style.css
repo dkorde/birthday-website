@@ -1,0 +1,243 @@
+
+:root{ --bg:#0f1129; --bg2:#151943; --text:#f7f8ff; --muted:#c9cbe3; --accent:#F9D342; --accent2:#6E8B3D; --ring:#ffffff28; }
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:linear-gradient(180deg,var(--bg),var(--bg2));overflow-x:hidden}
+.container{width:min(1100px,92vw);margin:0 auto}
+
+/* Nav (minimal) */
+
+.nav{position:sticky;top:0;z-index:10;background:linear-gradient(180deg,#0f1129cc,#0f112980);backdrop-filter:blur(8px);border-bottom:1px solid #ffffff18}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.menu{display:flex;gap:.6rem}
+.menu button{padding:.5rem .8rem;border-radius:12px;border:1px solid var(--ring);background:#ffffff10;color:#fff;font-weight:700;cursor:pointer}
+
+
+/* Scene skeleton */
+.scene{position:relative;min-height:90svh;display:grid;place-items:center;text-align:center;padding:3rem 0 4rem}
+.headline{font-size:clamp(28px,7vw,60px);margin:0 0 .6rem}
+.sub{color:var(--muted);margin:.3rem auto 1rem;max-width:760px}
+.actions{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+.btn{background:linear-gradient(135deg,var(--accent),#ffcc00);color:#1a1a1a;padding:.9rem 1.1rem;border:none;border-radius:14px;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(249,211,66,.35)}
+.btn-ghost{background:#ffffff12;color:#fff;border:1px solid var(--ring);padding:.9rem 1.1rem;border-radius:14px;font-weight:700;cursor:pointer}
+.card{background:linear-gradient(180deg,#1a1d44,#15193d);border:1px solid #ffffff18;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.45);padding:1.1rem}
+
+/* Steps: show only one */
+.step{display:none}
+.step.active{display:block}
+
+/* Progress dots */
+.progress{display:flex;gap:8px;justify-content:center;margin-top:8px}
+.dot{width:8px;height:8px;border-radius:999px;background:#ffffff30;border:1px solid #ffffff50}
+.dot.on{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
+/* Hearts & starfield */
+.hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.heart{position:absolute;bottom:-40px;width:18px;height:18px;background:var(--accent);transform:rotate(45deg);animation:floatUp linear infinite;box-shadow:0 0 20px var(--accent)}
+.heart::before,.heart::after{content:"";position:absolute;width:18px;height:18px;background:inherit;border-radius:50%}
+.heart::before{left:-9px;top:0}.heart::after{left:0;top:-9px}
+@keyframes floatUp{from{transform:translateY(0) rotate(45deg);opacity:.95}to{transform:translateY(-110vh) rotate(45deg);opacity:0}}
+canvas.bgfx{position:fixed;inset:0;pointer-events:none;z-index:0}
+
+/* Landing visuals */
+.hero-wrap{display:grid;gap:16px;justify-items:center}
+
+
+.illustration{
+  width: min(300px, 86vw);
+  height: auto;
+  max-height: 52vh;
+  object-fit: cover;
+  border-radius: 26px;
+  border: 2px solid #ffffff22;
+  box-shadow: 0 0 25px rgba(249, 211, 66, 0.35);
+  animation:floatY 4s ease-in-out infinite alternate
+}
+
+
+/*
+.illustration{width:min(420px,85vw);border-radius:18px;border:1px solid #ffffff22;box-shadow:0 18px 50px rgba(0,0,0,.45);animation:floatY 4s ease-in-out infinite alternate}
+*/
+@keyframes floatY{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+/*
+.hero-gif{width:120px;height:120px;border-radius:12px;border:1px solid #ffffff22;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+*/
+
+/*
+.hero-gif{
+  width: min(300px, 50vw);
+  height: auto;
+
+  border-radius: 20px;
+  border: 1px solid #ffffff22;
+  box-shadow: 0 12px 30px rgba(0,0,0,.4); 
+}
+*/
+/* Perfect circular illustration that fills the circle */
+.hero-gif{
+  /* Make the box square and responsive */
+  width: min(300px, 70vw);
+  aspect-ratio: 1 / 1;
+
+  /* Circle shape */
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* Fill the circle (no left/right arcs) */
+  object-fit: cover;        /* ← switch from 'contain' to 'cover' */
+
+  /* Optional: adjust vertical focus (e.g., 50% 40%) */
+  object-position: 50% 50%;
+
+  /* Style */
+  border: 2px solid #ffffff30;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  
+}
+
+/* Cake */
+.cake-stage{width:min(520px,94vw);margin:1rem auto;position:relative}
+.cake{position:relative;width:340px;height:230px;margin:0 auto}
+.layer{position:absolute;left:50%;transform:translateX(-50%);width:300px;height:70px;background:#fff5cc;border-radius:18px;border:1px solid #ffffff22;box-shadow:0 10px 24px rgba(0,0,0,.28) inset,0 10px 30px rgba(0,0,0,.35)}
+.layer.top{top:20px}.layer.mid{top:80px;width:320px}.layer.bot{top:140px;width:340px}
+.icing{position:absolute;top:-8px;left:0;right:0;height:22px;background:#ffd76a;border-radius:18px 18px 6px 6px;box-shadow:0 6px 14px rgba(0,0,0,.18) inset}
+.drip{position:absolute;width:20px;height:28px;background:#ffd76a;border-radius:10px;bottom:-8px}.drip.d1{left:40px}.drip.d2{left:120px;height:34px}.drip.d3{right:60px}
+.candle{position:absolute;width:12px;height:36px;background:repeating-linear-gradient(180deg,#fff,#fff 6px,var(--accent2) 6px,var(--accent2) 12px);border-radius:6px;box-shadow:0 0 0 1px #ffffff55 inset}
+.c1{left:120px;top:-18px}.c2{left:154px;top:-22px}.c3{left:188px;top:-18px}
+.flame{position:absolute;width:16px;height:22px;background:radial-gradient(circle at 50% 40%,#fff6a3,#ffae00 62%,#ff7a00 85%);border-radius:50%;transform-origin:50% 100%;top:-22px;left:-2px;animation:flicker .25s infinite alternate;filter:drop-shadow(0 0 8px #ffb300)}
+@keyframes flicker{from{transform:rotate(-4deg) scale(1);opacity:.95}to{transform:rotate(4deg) scale(1.05);opacity:.85}}
+.flame.off{display:none}
+.knife{position:absolute;right:-30px;top:-14px;width:140px;height:16px;background:linear-gradient(90deg,#cbd5e1,#9aa5b1);border-radius:8px;transform-origin:right center;transform:rotate(35deg);box-shadow:0 2px 12px rgba(0,0,0,.25);display:none}
+.knife.show{display:block;animation:cutAnim 1.1s ease forwards}
+@keyframes cutAnim{0%{transform:translate(0,0) rotate(35deg)}45%{transform:translate(-180px,18px) rotate(12deg)}100%{transform:translate(-160px,12px) rotate(18deg)}}
+.slice{position:absolute;width:80px;height:70px;background:#fff5cc;border-radius:12px;border:1px solid #ffffff22;top:20px;left:60px;transform:translate(0,0);display:none}
+.slice.show{display:block;animation:sliceOut .9s ease forwards .4s}
+@keyframes sliceOut{to{transform:translate(-40px,90px) rotate(-10deg)}}
+
+/* Message */
+.message{white-space:pre-wrap;font-size:1.08rem;line-height:1.7}
+.type{opacity:.98}
+
+/* Photos */
+/*
+.gallery{position:relative}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px;scroll-behavior:smooth}
+.slide{min-width:80%;height:min(460px,70svh);border-radius:16px;border:1px solid #ffffff18;overflow:hidden;background:#0a0f2e;scroll-snap-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35);position:relative}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;filter:contrast(1.05) saturate(1.05)}
+.slide:hover img{transform:scale(1.03)}
+.cap{position:absolute;left:12px;bottom:12px;background:#0008;color:#fff;padding:.45rem .7rem;border-radius:999px;border:1px solid #ffffff33;backdrop-filter:blur(4px);font-size:.9rem}
+.nav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.nav button{pointer-events:auto}
+	
+*/
+
+/* === Gallery (adaptive sizing) === */
+.gallery { position:relative; }
+
+.track{
+  display:flex; gap:12px;
+  overflow-x:auto; scroll-snap-type:x mandatory;
+  padding:12px; scroll-behavior:smooth;
+}
+
+.slide{
+  min-width: min(90vw, 1100px);           /* wide on mobile, cap on desktop */
+  height: clamp(320px, 70svh, 580px);     /* responsive height */
+  border-radius:16px;
+  border:1px solid #ffffff18;
+  overflow:hidden;
+  background:#0a0f2e;
+  scroll-snap-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  position:relative;
+}
+
+.slide img{
+  width:100%; height:100%;
+  object-fit: cover;                      /* default = Fill (cover) */
+  display:block;
+  transition: transform .4s ease, opacity .2s ease;
+}
+
+/* When the image is portrait, allow full view without awkward cropping */
+.slide.portrait img{ object-fit: contain; background:#0b102e; }
+
+/* Optional: add subtle scale on hover for desktops only */
+@media (hover:hover){
+  .slide:hover img{ transform: scale(1.02); }
+}
+
+/* Caption chip */
+.cap{
+  position:absolute; left:12px; bottom:12px;
+  background:#0008; color:#fff;
+  padding:.45rem .7rem; border-radius:999px;
+  border:1px solid #ffffff33;
+  /* tiny backdrop blur looks neat; fine to keep now that global blur is fixed */
+  backdrop-filter: blur(6px);
+  font-size:.9rem;
+}
+
+/* Left-right buttons */
+.gallery .nav{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:space-between;
+  pointer-events:none;
+  background: transparent !important;
+  backdrop-filter: none !important;
+}
+.gallery .nav button{
+  pointer-events:auto;
+  background:#ffffff14; color:#fff; border:1px solid #ffffff33;
+  padding:.6rem .8rem; border-radius:10px; cursor:pointer;
+}
+
+/* --- Fit/Fill toggle button --- */
+.fit-toggle{
+  position:absolute; right:12px; bottom:12px;
+  background:#ffffff14; color:#fff;
+  border:1px solid #ffffff33; border-radius:10px;
+  padding:.4rem .6rem; font-size:.85rem; cursor:pointer;
+}
+
+/* Gift box */
+.stage{position:relative;width:min(520px,92vw);height:min(380px,70svh);display:grid;place-items:center;margin:0 auto}
+.gift{position:relative;width:240px;height:170px;cursor:pointer}
+.box{position:absolute;inset:0;background:linear-gradient(180deg,#ffe88f,#f9d342);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.ribbon-vert,.ribbon-horz{position:absolute;background:var(--accent2)}
+.ribbon-vert{width:18px;left:calc(50% - 9px);top:0;bottom:0;border-radius:8px}
+.ribbon-horz{height:18px;left:0;right:0;top:calc(50% - 9px);border-radius:8px}
+.lid{position:absolute;left:-6px;right:-6px;top:-26px;height:46px;background:linear-gradient(180deg,#ffe27a,#f5c400);border-radius:12px;transform-origin:50% 100%;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:transform .7s cubic-bezier(.2,.7,.1,1)}
+.gift.open .lid{transform:rotateX(160deg) translateY(-6px)}
+.bow{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:120px;height:32px}
+.bow::before,.bow::after{content:"";position:absolute;width:52px;height:32px;background:var(--accent2);border-radius:50% 50% 10% 10% / 70% 70% 30% 30%;box-shadow:inset -6px -8px 16px rgba(0,0,0,.15)}
+.bow::before{left:0;transform:rotate(-18deg)}
+.bow::after{right:0;transform:rotate(18deg)}
+.reveal{position:absolute;top:0;left:50%;transform:translate(-50%,10px) scale(.96);width:min(520px,92vw);opacity:0;transition:transform .6s cubic-bezier(.2,.7,.1,1),opacity .5s ease}
+.gift.open ~ .reveal{opacity:1;transform:translate(-50%,-10px) scale(1)}
+.reveal .msg{background:#0b0f2a;border:1px solid #ffffff18;border-radius:16px;padding:1rem;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.reveal .msg p{margin:.4rem 0}
+.reveal .gif{margin-top:.6rem;border-radius:12px;border:1px solid #ffffff22;box-shadow:0 12px 32px rgba(0,0,0,.4);max-width:220px}
+
+footer{padding:2rem 0 3rem;color:var(--muted);text-align:center}
+
+/* === GLOBAL: prevent any page-wide blur overlays === */
+* { filter: none !important; backdrop-filter: none !important; }
+
+/* Background layers must stay behind content */
+canvas.bgfx { position: fixed; inset: 0; z-index: 0 !important; pointer-events: none; }
+.hearts     { position: absolute; inset: 0; z-index: 0 !important; pointer-events: none; }
+
+/* Foreground content sits above backgrounds */
+.scene, .step { position: relative; z-index: 1; }
+
+/* Nav: remove frosted-glass effect and any accidental overreach */
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: visible;
+  background: rgba(15,17,41,.86);     /* solid translucency, no blur */
+  border-bottom: 1px solid #ffffff18;
+}

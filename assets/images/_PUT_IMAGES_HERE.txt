@@ -1,0 +1,8 @@
+Place these files here with exact names (case-sensitive on some hosts):
+- dt0ng8z7mnrmw0cw7k6bbv2278_result_0.png
+- giphy.gif
+- 09e76c40a48420df2de83ea83e5210dc.png
+- a6cdaa9413bc9405d119ef0f9fd6596f.png
+- 524e902ec5198f3578fab7be0f986e5a.png
+- F3DBCF13-4FBC-4DFC-BE8F-F0A7B903184B.PNG
+- IMG_4830.PNG
