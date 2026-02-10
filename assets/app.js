@@ -7,11 +7,17 @@ const CONFIG = {
   ILLUSTRATION: "assets/images/F3DBCF13-4FBC-4DFC-BE8F-F0A7B903184B.PNG",
   LANDING_GIF: "assets/images/happy_birthday.gif",
 
-  HEARTFELT: `My Love, Shivani ❤️,
-On this beautiful day that brought you into the world, my heart feels overwhelmed with gratitude.  The universe became softer 🌤️, the light warmer ✨, and life more meaningful the day you arrived. Tonight, as candles glow 🕯️ and the world falls into a quiet hush 🌙, I want you to feel every ounce of the love I carry for you… a love that grows deeper with every shared moment 💞, every smile 😊, every day we walk through together.
+  HEARTFELT: `My Love, Shivani ❤️
+On this beautiful day that brought you into the world, my heart feels overwhelmed with gratitude.  The universe became softer 🌤️, the light warmer ✨, and life more meaningful the day you arrived. 
+
+Tonight, as candles glow 🕯️ and the world falls into a quiet hush 🌙, I want you to feel every ounce of the love I carry for you… a love that grows deeper with every shared moment 💞, every smile 😊, every day we walk through together.
+
 Shivani, you are the calm after every storm 🌈, the warmth in all my winters ❄️❤️, the smile that colors my days with hope 🌼. You are the soul I lean toward without even thinking — the blessing I thank life for every single day 🙏.
+
 May this birthday wrap you in the same warmth, joy, and quiet magic ✨ you bring into my world so effortlessly.
+
 Here’s to you, Shivani — to your grace 🌹, your laughter 💐, your dreams 🌟, and to the beautiful journey we’re building hand in hand 🤝.
+
 Happy Birthday, my heart… today, tomorrow, and always.🎂❤️✨`,
 
   PHOTOS: [
