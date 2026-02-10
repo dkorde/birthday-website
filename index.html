@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Shivani’s Birthday Journey 🎂</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot"></span><span id="brandName"></span></div>
+      <div class="menu"><button id="musicToggle">🎵 Play</button></div>
+    </div>
+  </div>
+
+  <section class="scene">
+    <div class="hearts" aria-hidden="true"></div>
+
+    <!-- STEP 0: Landing -->
+    <div class="container step active" id="step-0">
+      <h1 class="headline">Happy Birthday, <span data-her></span>! 🎂</h1>
+      <p class="sub">Welcome to your little birthday journey. Tap Start and I’ll take you through the surprises one by one.</p>
+      <div class="hero-wrap">
+        <img id="illustration" class="illustration" alt="illustration"/>
+        <img id="landingGif" class="hero-gif" alt="fun gif"/>
+      </div>
+      <div class="actions">
+        <button class="btn" id="startBtn">✨ Start</button>
+        <button class="btn-ghost" data-next>Next ➜</button>
+      </div>
+    </div>
+
+    <!-- STEP 1: Cake -->
+    <div class="container step" id="step-1" hidden>
+      <h2 class="headline">Make a wish, <span data-her></span> ✨</h2>
+      <p class="sub">First, blow out the candles. Then we cut a slice.</p>
+      <div class="cake-stage card">
+        <div class="cake">
+          <div class="layer top">
+            <div class="icing">
+              <div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div>
+            </div>
+            <div class="candle c1"><div class="flame"></div></div>
+            <div class="candle c2"><div class="flame"></div></div>
+            <div class="candle c3"><div class="flame"></div></div>
+          </div>
+          <div class="layer mid"><div class="icing"></div></div>
+          <div class="layer bot"><div class="icing"></div></div>
+          <div class="knife"></div>
+          <div class="slice"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="blow">🕯️ Blow Candles</button>
+        <button class="btn-ghost" id="cut" disabled>🔪 Cut a Slice</button>
+      </div>
+      <div class="actions" style="margin-top:.6rem">
+        <button class="btn-ghost" data-prev>◀︎ Back</button>
+        <button class="btn-ghost" data-next>Next ➜</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Message -->
+    <div class="container step" id="step-2" hidden>
+      <h2 class="headline">A little message for <span data-her></span> 💛</h2>
+      <div class="card" style="margin:1rem auto; max-width:760px; text-align:left;">
+        <p id="msg" class="message type"></p>
+      </div>
+      <div class="actions">
+        <button class="btn-ghost" data-prev>◀︎ Back</button>
+        <button class="btn-ghost" data-next>Next ➜</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Photos -->
+    <div class="container step" id="step-3" hidden>
+      <h2 class="headline">Your Special Moments, <span data-her></span> ✨</h2>
+      <p class="sub">Swipe or use the arrows. Each frame has a tiny note.</p>
+      <div class="gallery">
+        <div id="track" class="track"></div>
+        <div class="nav"><button id="prev" class="btn-ghost">⬅️</button><button id="next" class="btn-ghost">➡️</button></div>
+      </div>
+      <div class="actions" style="margin-top:.6rem">
+        <button class="btn-ghost" data-prev>◀︎ Back</button>
+        <button class="btn-ghost" data-next>Next ➜</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Gift -->
+    <div class="container step" id="step-4" hidden>
+      <h2 class="headline">Tap the gift to open it, <span data-her></span> ✨</h2>
+      <div class="stage">
+        <div id="giftBox" class="gift" role="button" aria-label="Open gift">
+          <div class="lid"></div>
+          <div class="box"></div>
+          <div class="ribbon-vert"></div>
+          <div class="ribbon-horz"></div>
+          <div class="bow"></div>
+        </div>
+        <div class="reveal">
+          <div class="msg">
+            <p id="giftText" style="font-size:1.05rem"></p>
+            <img id="giftGif" class="gif" alt="celebration gif"/>
+          </div>
+        </div>
+      </div>
+      <div class="actions" style="margin-top:.6rem">
+        <button class="btn" id="openGift">🎁 Open Gift</button>
+        <button class="btn-ghost" data-prev>◀︎ Back</button>
+      </div>
+    </div>
+
+    <div class="progress"></div>
+  </section>
+
+  <footer>Made with 💛 by Dhananjay.</footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
